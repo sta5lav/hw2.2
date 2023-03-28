@@ -1,14 +1,15 @@
-public class Griffindor {
-    private final String student;
-    private int nobility;
-    private int honor;
-    private int bravery;
-    private int rank;
-    private int thePowerOfMagic;
-    private int transgressionRange;
+public class Griffindor extends Hogwarts {
+    private final int nobility;
+    private final int honor;
+    private final int bravery;
+    private final int rank;
 
-    public String getStudent() {
-        return student;
+    public Griffindor(String student, int nobility, int honor, int bravery, int thePowerOfMagic, int transgressionRange) {
+        super(student, thePowerOfMagic, transgressionRange);
+        this.nobility = nobility;
+        this.honor = honor;
+        this.bravery = bravery;
+        this.rank = nobility + honor + bravery;
     }
 
     public int getNobility() {
@@ -27,52 +28,10 @@ public class Griffindor {
         return rank;
     }
 
-    public int getThePowerOfMagic() {
-        return thePowerOfMagic;
-    }
-
-    public int getTransgressionRange() {
-        return transgressionRange;
-    }
-
-    public void setNobility(int nobility) {
-        this.nobility = nobility;
-    }
-
-    public void setHonor(int honor) {
-        this.honor = honor;
-    }
-
-    public void setBravery(int bravery) {
-        this.bravery = bravery;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
-    public void setThePowerOfMagic(int thePowerOfMagic) {
-        this.thePowerOfMagic = thePowerOfMagic;
-    }
-
-    public void setTransgressionRange(int transgressionRange) {
-        this.transgressionRange = transgressionRange;
-    }
-
-    public Griffindor(String student, int nobility, int honor,
-                      int bravery, int thePowerOfMagic, int transgressionRange) {
-        this.student = student;
-        this.nobility = nobility;
-        this.honor = honor;
-        this.bravery = bravery;
-        this.rank = nobility + honor + bravery;
-        this.thePowerOfMagic = thePowerOfMagic;
-        this.transgressionRange = transgressionRange;
-    }
-
     @Override
     public String toString() {
-        return  "благородство = " + nobility +
+        return "Факультет Griffindor. Студент: " + student + ". " +
+                "благородство = " + nobility +
                 ", честь = " + honor +
                 ", храбрость = " + bravery +
                 ", сумма баллов = " + rank +
